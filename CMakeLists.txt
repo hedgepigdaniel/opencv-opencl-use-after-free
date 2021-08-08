@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 2.8)
+project( OpenClFreeReproduction )
+find_package( OpenCV REQUIRED )
+find_package( OpenCL REQUIRED )
+find_package( Threads REQUIRED )
+include_directories( ${OpenCV_INCLUDE_DIRS} )
+add_executable( demo demo.cpp )
+target_link_libraries( demo ${OpenCV_LIBS} OpenCL ${CMAKE_THREAD_LIBS_INIT} )
